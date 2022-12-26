@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet] //read
         public IEnumerable<Musteriler> GetMusteriler()
         {
             return musterilerRepository.GetAllMusteriler().ToList();
@@ -35,13 +35,13 @@ namespace WebAPI.Controllers
             return musterilerRepository.GetMusteriById(id); 
         }
 
-        [HttpPost]
+        [HttpPost] //create
         public Musteriler Create([FromBody] Musteriler musteriler)
         {
             return musterilerRepository.AddMusteri(musteriler);
         }
 
-        [HttpPut]
+        [HttpPut] //update
         public Musteriler Update([FromForm] Musteriler musteriler)
         {
             return musterilerRepository.UpdateMusteri(musteriler);
