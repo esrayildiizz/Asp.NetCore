@@ -24,6 +24,7 @@ namespace UILayer.Controllers
             return View(musterilist);   
         }
 
+
         //get kısmımızı bu şekilde yazabiliyoruz.
         public ViewResult GetMusteriler()=>View();
 
@@ -112,7 +113,6 @@ namespace UILayer.Controllers
 
 
         [HttpPost]
-
         public async Task<IActionResult> DeleteMusteriler(int musteriId)
         {
             using (var httpClient = new HttpClient())
@@ -120,7 +120,6 @@ namespace UILayer.Controllers
                 using (var responce = await httpClient.DeleteAsync("https://localhost:44334/api/Musteriler"+ musteriId))
                 {
                     string apiResponce = await responce.Content.ReadAsStringAsync();
-                    
                 }
             }
             return RedirectToAction("Index");
