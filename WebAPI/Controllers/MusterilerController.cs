@@ -41,13 +41,14 @@ namespace WebAPI.Controllers
             return musterilerRepository.AddMusteri(musteriler);
         }
 
-        [HttpPut] //update
+        [HttpPut]
         public Musteriler Update([FromForm] Musteriler musteriler)
         {
             return musterilerRepository.UpdateMusteri(musteriler);
         }
 
-        [HttpDelete]
+
+        [HttpDelete("{id}")]
         public void Delete(int? id) => musterilerRepository.DeleteMusteri(id);
 
     }
